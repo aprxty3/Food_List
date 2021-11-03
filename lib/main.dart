@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food/ui/pages/profile_screen.dart';
+import 'package:food_apps/ui/pages/profile_screen.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
