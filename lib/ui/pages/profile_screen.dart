@@ -78,8 +78,19 @@ class ProfileScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Text("FOOD"),
+                    padding: const EdgeInsets.only(
+                      bottom: 8.0,
+                      left: 32,
+                      right: 16,
+                    ),
+                    child: Text(
+                      "FOOD",
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.blueGrey,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ),
                   Expanded(
                     child: Container(color: Colors.redAccent),
