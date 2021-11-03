@@ -7,30 +7,40 @@ class ProfileScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color(0xFFE9E9E9),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: const Text(
-              "Home",
-              style: const TextStyle(color: Colors.white),
-            ),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.vertical(),
+        child: BottomNavigationBar(
+          iconSize: 40,
+          selectedIconTheme: IconThemeData(
+            color: const Color(0xFF200087),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: const Text(
-              "Search",
-              style: const TextStyle(color: Colors.white),
-            ),
+          unselectedIconTheme: IconThemeData(
+            color: Colors.black12,
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: const Text(
-              "Person",
-              style: const TextStyle(color: Colors.white),
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              title: const Text(
+                "Home",
+                style: const TextStyle(color: Colors.white),
+              ),
             ),
-          ),
-        ],
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              title: const Text(
+                "Search",
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              title: const Text(
+                "Person",
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Stack(children: <Widget>[
         Positioned(
