@@ -8,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFE9E9E9),
       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.vertical(),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
         child: BottomNavigationBar(
           iconSize: 40,
           selectedIconTheme: IconThemeData(
@@ -53,7 +53,7 @@ class ProfileScreen extends StatelessWidget {
               bottom: const Radius.circular(40),
             ),
             child: Container(
-              color: Colors.white,
+              color: Colors.lightBlue,
             ),
           ),
         )
