@@ -29,14 +29,20 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Icon(Icons.search),
+              ),
               title: const Text(
                 "Search",
                 style: const TextStyle(color: Colors.white),
               ),
             ),
             const BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Icon(Icons.person),
+              ),
               title: const Text(
                 "Person",
                 style: const TextStyle(color: Colors.white),
@@ -45,22 +51,47 @@ class ProfileScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Stack(children: <Widget>[
-        Positioned(
-          top: 0,
-          height: height * 0.35,
-          left: 0,
-          right: 0,
-          child: ClipRRect(
-            borderRadius: const BorderRadius.vertical(
-              bottom: const Radius.circular(40),
-            ),
-            child: Container(
-              color: Colors.lightBlue,
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            top: 0,
+            height: height * 0.20,
+            left: 0,
+            right: 0,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.vertical(
+                bottom: const Radius.circular(40),
+              ),
+              child: Container(
+                color: Colors.lightBlue,
+              ),
             ),
           ),
-        )
-      ]),
+          Positioned(
+            top: height * 0.38,
+            left: 0,
+            right: 0,
+            child: Container(
+              color: Colors.grey,
+              height: height,
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: Text("FOOD"),
+                  ),
+                  Expanded(
+                    child: Container(color: Colors.redAccent),
+                  ),
+                  Expanded(
+                    child: Container(color: Colors.blueAccent),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
