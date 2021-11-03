@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void void main() => runApp(MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
   @override 
@@ -9,6 +9,6 @@ class MyApp extends StatelessWidget{
       title: "Flutter Demo",
       theme: ThemeData(primarySwatch: Colors.blue),
       home: Container(),
-    )
+    );
   }
 }
