@@ -31,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
               bottom: const Radius.circular(40),
             ),
             child: Container(
-              color: Color.white,
+              color: Colors.white,
             ),
           ),
         )
