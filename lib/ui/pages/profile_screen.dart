@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/material/bottom_navigation_bar.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -9,15 +10,26 @@ class ProfileScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
+            icon: Icon(Icons.home),
+            title: const Text(
+              "Home",
+              style: const TextStyle(color: Colors.white),
             ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
+            icon: Icon(Icons.search),
+            title: const Text(
+              "Search",
+              style: const TextStyle(color: Colors.white),
             ),
-          )
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            title: const Text(
+              "Person",
+              style: const TextStyle(color: Colors.white),
+            ),
+          ),
         ],
       ),
       body: Stack(children: <Widget>[
