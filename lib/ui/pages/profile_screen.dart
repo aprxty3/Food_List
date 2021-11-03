@@ -93,7 +93,14 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: Container(color: Colors.redAccent),
+                    child: SingleChildScrollView(
+                      child: Row(children: <Widget>[]),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: Colors.redAccent,
+                    ),
                   ),
                   Expanded(
                     child: Container(color: Colors.blueAccent),
@@ -103,6 +110,27 @@ class ProfileScreen extends StatelessWidget {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class _FoodCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(
+        right: 20,
+        left: 10,
+      ),
+      child: Material(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        elevation: 4,
+        child: Column(
+          children: <Widget>[
+
+          ]
+        ),
       ),
     );
   }
