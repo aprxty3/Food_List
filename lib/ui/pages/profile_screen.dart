@@ -19,7 +19,10 @@ class ProfileScreen extends StatelessWidget {
           ),
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Icon(Icons.home),
+              ),
               title: const Text(
                 "Home",
                 style: const TextStyle(color: Colors.white),
