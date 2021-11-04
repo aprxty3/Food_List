@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/material/bottom_navigation_bar.dart';
+import 'package:food_apps/ui/model/meal.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -94,7 +94,12 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: SingleChildScrollView(
-                      child: Row(children: <Widget>[]),
+                      child: Row(children: <Widget>[
+                        for (int i = 0; i < foods.length; i++)
+                          _FoodCard(
+                            food: foods[i],
+                          )
+                      ]),
                     ),
                   ),
                   Expanded(
@@ -116,6 +121,8 @@ class ProfileScreen extends StatelessWidget {
 }
 
 class _FoodCard extends StatelessWidget {
+  final Food food;
+  const _FoodCard({Key key, @required this.food}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -126,11 +133,22 @@ class _FoodCard extends StatelessWidget {
       child: Material(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         elevation: 4,
-        child: Column(
-          children: <Widget>[
-
-          ]
-        ),
+        child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+          Expanded(
+            child: Image.asset(food.imagePath),
+          ),
+          Expanded(
+            child: Column(
+              children: [
+                Text(food.name),
+                Text(food.timeTaken),
+                SizedBox(
+                  height: 16,
+                ),
+              ],
+            ),
+          ),
+        ]),
       ),
     );
   }
