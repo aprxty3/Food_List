@@ -6,9 +6,9 @@ class RecipeAPI {
 //   var req = unirest("GET", "https://yummly2.p.rapidapi.com/feeds/list");
 
 // req.query({
-// 	"limit": "18",
-// 	"start": "0",
-// 	"tag": "list.recipe.popular"
+	// "limit": "18",
+	// "start": "0",
+	// "tag": "list.recipe.popular"
 // });
 
 // req.headers({
@@ -17,5 +17,10 @@ class RecipeAPI {
 // 	"useQueryString": true
 // });
 
+static Future<List<Recipe>> getRecipe() async {
+    var uri = Uri.https('yummly2.p.rapidapi.com', '/feeds/list',
+        {"limit": "18", "start": "0", "tag": "list.recipe.popular"});
 
+        
+}
 }
