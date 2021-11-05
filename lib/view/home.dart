@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_apps/model/api.dart';
 import 'package:food_apps/view/widget/recipe_cart.dart';
+import 'package:food_apps/model/recipe.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,7 +9,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Recipe> _recipes;
+  bool _isLoading = true;
+
   @override
+  void initState() {
+    super.initState();
+
+    getRecipes();
+  }
+
+  Future<void> getRecipes() async {
+    _recipes = await RecipeAPI.getRecipe();
+    setState(() {
+      _isLoading = false;
+    });
+    print(_recipes);
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -23,7 +42,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: RecipeCard(
-          title: 'Fruit Granola',
+          title: 'Rica-rica',
           cookTime: '20 min',
           rating: '4.1',
           thumbnailUrl:
