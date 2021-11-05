@@ -5,10 +5,21 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>{
-  @override 
-  Widget build(BuildContext context){
-    return Container(
-      ,)
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Icon(Icons.restaurant_menu),
+            SizedBox(
+              width: 10,
+            ),
+            Text('Food Recipes')
+          ],
+        ),
+      ),
+    );
   }
 }
