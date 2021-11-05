@@ -5,20 +5,19 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+class MyApp extends StatefulWidget{
+  @override 
+  Widget build(BuildContext context){
     return MaterialApp(
-      title: 'Food recipe',
+      tittle: 'Food Recipes',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         primaryColor: Colors.white,
         textTheme: TextTheme(
-          bodyText2: TextStyle(color: Colors.white),
-        ),
+          bodyText2: TextStyle(color: Colors.white)
+        )
       ),
-      home: HomePage(),
-    );
+    )
   }
 }
