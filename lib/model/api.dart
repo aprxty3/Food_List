@@ -6,21 +6,28 @@ class RecipeAPI {
 //   var req = unirest("GET", "https://yummly2.p.rapidapi.com/feeds/list");
 
 // req.query({
-	// "limit": "18",
-	// "start": "0",
-	// "tag": "list.recipe.popular"
+  // "limit": "18",
+  // "start": "0",
+  // "tag": "list.recipe.popular"
 // });
 
 // req.headers({
-// 	"x-rapidapi-host": "yummly2.p.rapidapi.com",
-// 	"x-rapidapi-key": "c7e44a9fe9mshd6139e551f20b66p147763jsndce4d78c8c3f",
-// 	"useQueryString": true
+  // "x-rapidapi-host": "yummly2.p.rapidapi.com",
+  // "x-rapidapi-key": "c7e44a9fe9mshd6139e551f20b66p147763jsndce4d78c8c3f",
+  // "useQueryString": true
 // });
 
-static Future<List<Recipe>> getRecipe() async {
+  static Future<List<Recipe>> getRecipe() async {
     var uri = Uri.https('yummly2.p.rapidapi.com', '/feeds/list',
         {"limit": "18", "start": "0", "tag": "list.recipe.popular"});
 
-        
-}
+    final response = await http.get(uri, headers: {
+      "x-rapidapi-host": "yummly2.p.rapidapi.com",
+      "x-rapidapi-key": "c7e44a9fe9mshd6139e551f20b66p147763jsndce4d78c8c3f",
+      "useQueryString": "true"
+    });
+
+    Map data = jsonDecode(response.body);
+    List _temp = [];
+  }
 }
